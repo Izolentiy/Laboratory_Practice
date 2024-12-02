@@ -9,12 +9,14 @@
             "type": "cortex-debug",
             "runToEntryPoint": "main",
             "servertype": "openocd",
-            "device": "STM32F429ZI",
+            // "device": "STM32F429ZI",
+            "device": "STM32F411VET6",
             "configFiles": [
                 "interface/stlink.cfg",
                 "target/stm32f4x.cfg"
             ],
-            "svdFile": "./STM32F429.svd"
+            // "svdFile": "./STM32F429.svd"
+            "svdFile": "./STM32F411.svd"
         }
     ]
 }
