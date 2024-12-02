@@ -1,3 +1,4 @@
+#pragma once
 #include "init.h"
 
 void EXTI0_IRQHandler(void);
