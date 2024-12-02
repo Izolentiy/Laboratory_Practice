@@ -1,4 +1,5 @@
 #include "init.h"
 
-void EXTI15_10_IRQHanlder(void);
+void EXTI0_IRQHandler(void);
+void EXTI3_IRQHandler(void);
 void SysTick_Handler(void);
