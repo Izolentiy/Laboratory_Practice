@@ -42,9 +42,9 @@ void SysTick_Handler(void) {
     ++B2_tick_count;
     
     (*(led_tick[0]))++;
-    (*(led_tick[0]))++;
-    (*(led_tick[0]))++;
-    (*(led_tick[0]))++;
-    (*(led_tick[0]))++;
-    (*(led_tick[0]))++;
+    (*(led_tick[1]))++;
+    (*(led_tick[2]))++;
+    (*(led_tick[3]))++;
+    (*(led_tick[4]))++;
+    (*(led_tick[5]))++;
 }
