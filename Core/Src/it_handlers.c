@@ -21,7 +21,7 @@ void EXTI3_IRQHandler(void) {
 
 void SysTick_Handler(void) {
     ++B1_tick;
-    ++B2_tick;
+    // ++B2_tick;
     
     (*(led_tick[0]))++;
     (*(led_tick[1]))++;

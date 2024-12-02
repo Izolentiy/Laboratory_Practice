@@ -73,27 +73,28 @@ void ITR_Ini() {
 
     // настройка мультиплексора на вывод линии прерывания EXTI13 на PC13
     // настройка маскирования 13 линии и детектирования фронта
-    MODIFY_REG(SYSCFG->EXTICR[3], SYSCFG_EXTICR4_EXTI13_Msk, SYSCFG_EXTICR4_EXTI13_PC);
-    SET_BIT(EXTI->IMR, EXTI_IMR_MR13);
-    SET_BIT(EXTI->RTSR, EXTI_IMR_MR13);
+    // MODIFY_REG(SYSCFG->EXTICR[3], SYSCFG_EXTICR4_EXTI13_Msk, SYSCFG_EXTICR4_EXTI13_PC);
+    // SET_BIT(EXTI->IMR, EXTI_IMR_MR13);
+    // SET_BIT(EXTI->RTSR, EXTI_IMR_MR13);
 
     // установка приоритета для вектора EXTI15_10 и его включение
     // NVIC_SetPriority(EXTI15_10_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
     // NVIC_EnableIRQ(EXTI15_10_IRQn);
     
-    MODIFY_REG(SYSCFG->EXTICR[0], SYSCFG_EXTICR1_EXTI0_Msk, SYSCFG_EXTICR1_EXTI0_PC);
+    // PA0 user button
+    MODIFY_REG(SYSCFG->EXTICR[0], SYSCFG_EXTICR1_EXTI0_Msk, SYSCFG_EXTICR1_EXTI0_PA);
     SET_BIT(EXTI->IMR, EXTI_IMR_MR0);
     SET_BIT(EXTI->RTSR, EXTI_IMR_MR0);
     SET_BIT(EXTI->FTSR, EXTI_IMR_MR0);
     NVIC_SetPriority(EXTI0_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
     NVIC_EnableIRQ(EXTI0_IRQn);
     
-    MODIFY_REG(SYSCFG->EXTICR[0], SYSCFG_EXTICR1_EXTI3_Msk, SYSCFG_EXTICR1_EXTI3_PC);
-    SET_BIT(EXTI->IMR, EXTI_IMR_MR3);
-    SET_BIT(EXTI->RTSR, EXTI_IMR_MR3);
-    SET_BIT(EXTI->FTSR, EXTI_IMR_MR3);
-    NVIC_SetPriority(EXTI3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
-    NVIC_EnableIRQ(EXTI3_IRQn);
+    // MODIFY_REG(SYSCFG->EXTICR[0], SYSCFG_EXTICR1_EXTI3_Msk, SYSCFG_EXTICR1_EXTI3_PC);
+    // SET_BIT(EXTI->IMR, EXTI_IMR_MR3);
+    // SET_BIT(EXTI->RTSR, EXTI_IMR_MR3);
+    // SET_BIT(EXTI->FTSR, EXTI_IMR_MR3);
+    // NVIC_SetPriority(EXTI3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
+    // NVIC_EnableIRQ(EXTI3_IRQn);
 }
 
 void SysTick_Ini() {

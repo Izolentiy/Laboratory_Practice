@@ -23,7 +23,7 @@ uint8_t B1_long_press_registered = 0;
 uint8_t B2_long_press_registered = 0;
 
 void B1_interrupt() {
-    B1_pressed = READ_BIT(GPIOC->IDR, GPIO_IDR_ID0);
+    B1_pressed = READ_BIT(GPIOA->IDR, GPIO_IDR_ID0);
     if (!B1_pressed && B1_tick >= BTN_DELAY_FILTER) {
         // кнопку отпустили
         // if (B1_tick >= LONG_PRESS_DURATION) B1_long_press();
@@ -62,9 +62,9 @@ void B2_short_press() {
 void B1_long_press() {
     if (++last_turned_led == 6) {
         last_turned_led = -1;
-        CLEAR_BIT(GPIOC->ODR, 0b111111 << 7);
+        // CLEAR_BIT(GPIOC->ODR, 0b111111 << 7);
     } else if (last_turned_led >= 0) {
-        SET_BIT(GPIOC->ODR, 1 << (7 + last_turned_led));
+        // SET_BIT(GPIOC->ODR, 1 << (7 + last_turned_led));
     }
 }
 void B2_long_press() {
