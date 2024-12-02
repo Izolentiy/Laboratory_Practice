@@ -6,6 +6,11 @@
 #include "..\..\CMSIS\Devices\stm32f4xx.h"
 #include "..\..\CMSIS\Devices\system_stm32f4xx.h"
 
+#define BTN_DELAY_FILTER 75
+#define LONG_PRESS_DURATION 2000
+
+void B1_interrupt();
+void B2_interrupt();
 void B1_short_press();
 void B2_short_press();
 void B1_long_press();
