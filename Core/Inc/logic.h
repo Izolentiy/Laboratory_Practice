@@ -2,9 +2,9 @@
 #define LOGIC_H
 
 #include <stdint.h>
-#include "..\..\CMSIS\Devices\stm32f411xe.h"
-#include "..\..\CMSIS\Devices\stm32f4xx.h"
-#include "..\..\CMSIS\Devices\system_stm32f4xx.h"
+#include "stm32f411xe.h"
+#include "stm32f4xx.h"
+#include "system_stm32f4xx.h"
 
 #define BTN_DELAY_FILTER 75
 #define LONG_PRESS_DURATION 2000
