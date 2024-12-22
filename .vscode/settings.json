@@ -6,6 +6,8 @@
         "stdint.h": "c",
         "stm32f4xx.h": "c",
         "it_handlers.h": "c",
-        "logic.h": "c"
+        "logic.h": "c",
+        "stm32f303xc.h": "c",
+        "system_stm32f3xx.h": "c"
     }
 }

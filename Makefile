@@ -40,12 +40,13 @@ Core/Src/main.c \
 Core/Src/init.c \
 Core/Src/it_handlers.c \
 Core/Src/logic.c \
-Core/Src/system_stm32f4xx.c
+CMSIS/Source/system_stm32f3xx.c \
+HAL/Src/ \
 
 
 # ASM sources
 ASM_SOURCES =  \
-startup_stm32f429xx.s
+startup_stm32f303xc.s \
 
 
 #######################################
@@ -89,8 +90,8 @@ AS_DEFS =
 
 # C defines
 C_DEFS =  \
--DSTM32F429xx
-#-DUSE_HAL_DRIVER \
+-DSTM32F303xC \
+-DUSE_HAL_DRIVER \
 
 
 
@@ -101,7 +102,8 @@ AS_INCLUDES =
 C_INCLUDES =  \
 -ICore/Inc \
 -ICMSIS/Devices \
--ICMSIS/Include
+-ICMSIS/Include \
+-IHAL/Inc \
 
 
 # compile gcc flags
@@ -122,7 +124,7 @@ CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)"
 # LDFLAGS
 #######################################
 # link script
-LDSCRIPT = STM32F429ZITx_FLASH.ld
+LDSCRIPT = STM32F303VCTx_FLASH.ld
 
 # libraries
 LIBS = -lc -lm -lnosys 
@@ -172,7 +174,7 @@ clean:
 # openocd
 #######################################
 flash: all
-	openocd -f interface/stlink.cfg -f target/stm32f4x.cfg -c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
+	openocd -f interface/stlink.cfg -f target/stm32f3x.cfg -c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
 
 #######################################
 # dependencies

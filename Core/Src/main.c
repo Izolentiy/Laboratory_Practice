@@ -5,11 +5,8 @@
 int main(void) {
     GPIO_Ini();
     RCC_Ini();
-    ITR_Ini();
     SysTick_Ini();
+    ITR_Ini();
 
-    init_periods_and_ticks();
-    while (1) {
-        manage_leds();
-    }
+    while (1) {}
 }
